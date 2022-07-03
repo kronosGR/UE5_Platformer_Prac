@@ -32,3 +32,27 @@ void UHook::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 	// ...
 }
 
+void UHook::GetComponentAndBind()
+{
+}
+
+void UHook::Grab()
+{
+}
+
+void UHook::Release()
+{
+}
+
+FHitResult UHook::GetPhysicsBodyInReach()
+{
+}
+
+FVector UHook::GetReachStart()
+{
+}
+
+FVector UHook::GetReachEnd()
+{
+}
+
