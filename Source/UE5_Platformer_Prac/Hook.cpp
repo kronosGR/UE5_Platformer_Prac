@@ -55,7 +55,12 @@ void UHook::Grab()
 
 	if (ActorHit)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Actor found")) ;
 		PhysicsHandle->GrabComponentAtLocation(GrabComponent,NAME_None,GrabComponent->GetOwner()->GetActorLocation());
+	} else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No Actor found")) ;
+		
 	}
 }
 
@@ -90,7 +95,7 @@ FVector UHook::GetReachStart()
 		PlayerViewPoint,
 		PlayerViewPointRotation);
 	
-	return FVector();
+	return PlayerViewPoint;
 }
 
 FVector UHook::GetReachEnd()
@@ -103,6 +108,6 @@ FVector UHook::GetReachEnd()
 		PlayerViewPointRotation);
 	
 	FVector LineTraceEnd = PlayerViewPoint + PlayerViewPointRotation.Vector() * Reach;
-	return FVector();
+	return LineTraceEnd;
 }
 
